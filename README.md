@@ -11,5 +11,6 @@ First of all download the project, then simply extract the "_Installer" folder i
 ## To-do List
 
 * Packages finder system
+* Fix images wrong fit in buttons
 * Improve the style of the installer
 * Show the window the installer on Unity startup.
