@@ -64,13 +64,11 @@ namespace _Installer
             minSize = maxSize;
             
             
-            // Setup pages
             currentPageRect = new Rect(0, Constants.TOP, Constants.WIDTH, Constants.HEIGHT - Constants.PADDING);
             nextPageRect = new Rect(0, Constants.TOP, Constants.WIDTH, Constants.HEIGHT - Constants.PADDING);
             headerRect = new Rect(0, 0, Constants.WIDTH, 60);
-            backButtonRect = new Rect(0, Constants.WIDTH - 24, 123, 24);
+            backButtonRect = new Rect(0, Constants.WIDTH - 30, 25, 26);
 
-            
             
             SetPage(currentPage);               
             Update();
@@ -139,12 +137,12 @@ namespace _Installer
             GUILayout.BeginVertical();
             GUILayout.FlexibleSpace();
             
-            EditorStyleAddOns.DrawLink(null,
+            EditorStyleAddOns.DrawLink(InstallerStyle.InstallIcon,
                     "Install the package",
                     "Install the latest version of the package.",
                     GotoPage, Pages.Install);
 
-            EditorStyleAddOns.DrawLink(null,
+            EditorStyleAddOns.DrawLink(InstallerStyle.TestIcon,
                      "Test page 2",
                      "That's the second page :D",
                      GotoPage, Pages.TestPage);
@@ -160,7 +158,7 @@ namespace _Installer
             GUILayout.BeginVertical();
             GUILayout.Space(20);
 
-            EditorStyleAddOns.DrawLink(InstallerStyle.InstallIcon, "TEST BUTTON!!", "", CoreAddOns.ImportPackage(Constants.INSTALLER_PACKAGES + "TestPackage.unitypackage"), null);
+            EditorStyleAddOns.DrawLink(InstallerStyle.InstallIcon, "TEST BUTTON!!", "", null, null);
 
 
             GUILayout.FlexibleSpace();
@@ -194,11 +192,7 @@ namespace _Installer
             pageInTransition = true;
             transitionStartTime = Time.realtimeSinceStartup;
             
-                
-            // next page slides in from the right
-            // welcome screen slides offscreen left
-            // reversed if returning to the welcome screen
-
+            
             if (nextPage == Pages.Home)
             {
                 nextPageRect.x = -Constants.WIDTH;
