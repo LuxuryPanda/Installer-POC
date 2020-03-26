@@ -26,19 +26,30 @@ namespace _Installer
         
         #region Installation
         
-        public static MethodToCall ImportPackage(string packagePath)
+        
+        public static void InstallTestPackage(object callback)
+        {
+            if (ShowDialog("Installer POC v1", "Do you want to install the package??", "Yes of course, let's go!!", "No, cancel!"))
+            {
+                ImportPackage(AssetsGUIDs.DemoPackage);
+            }
+        }
+        
+        /// <summary>
+        /// Import a package using its path or GUID
+        /// </summary>
+        /// <param name="package">Package's path or GUID</param>
+        public static void ImportPackage(string package)
         {
             try
             {
-                AssetDatabase.ImportPackage(packagePath, true);
+                AssetDatabase.ImportPackage(AssetDatabase.GUIDToAssetPath(package), true);
             }
             catch (Exception e)
             {
-                Debug.LogError("Error while importing the package '" + packagePath + "'" + " | Exception: <" + e + ">");
+                Debug.LogError("Error while importing the package '" + package + "'" + " | Exception: <" + e + ">");
                 throw;
             }
-
-            return null;
         }
 
         #endregion
@@ -46,10 +57,9 @@ namespace _Installer
         
         #region Dialogs
         
-        
-        public static void ShowDialog(string title, string message, string buttonText)
+        public static bool ShowDialog(string title, string message, string acceptText, string cancelText)
         {
-            EditorUtility.DisplayDialog(title, message, buttonText);
+            return EditorUtility.DisplayDialog(title, message, acceptText, cancelText);
         }
 
         #endregion

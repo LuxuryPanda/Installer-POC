@@ -158,7 +158,7 @@ namespace _Installer
             GUILayout.BeginVertical();
             GUILayout.Space(20);
 
-            EditorStyleAddOns.DrawLink(InstallerStyle.InstallIcon, "TEST BUTTON!!", "", null, null);
+            EditorStyleAddOns.DrawLink(InstallerStyle.InstallIcon, "TEST BUTTON!!", "", CoreAddOns.InstallTestPackage, null);
 
 
             GUILayout.FlexibleSpace();
@@ -174,12 +174,12 @@ namespace _Installer
             EditorStyleAddOns.DrawLink(InstallerStyle.InstallIcon,
                  "Sub-Button 1",
                  "Test sub-button 1!",
-                 CoreAddOns.OpenUrl, "");
+                 CoreAddOns.OpenUrl, "www.google.com");
 
             EditorStyleAddOns.DrawLink(InstallerStyle.TestIcon,
                  "Sub-Button 2",
                  "Test sub-button 2!",
-                 CoreAddOns.OpenUrl, "");
+                 CoreAddOns.OpenUrl, "www.youtube.com");
 
             GUILayout.FlexibleSpace();
             GUILayout.EndVertical();
