@@ -14,7 +14,8 @@ First of all download the project, then simply extract the "_Installer" folder i
  
 ## Screenshots
 ![](https://github.com/LuxuryPanda/Installer-POC/blob/master/Screenshots/Home.PNG)
- 
+![](https://github.com/LuxuryPanda/Installer-POC/blob/master/Screenshots/InstallPage.PNG)
+![](https://github.com/LuxuryPanda/Installer-POC/blob/master/Screenshots/TestPage.PNG)
 ## To-do List
 
 * Packages finder system
