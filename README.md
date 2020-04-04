@@ -12,6 +12,9 @@ First of all download the project, then simply extract the "_Installer" folder i
 * Multi-pages with sliding effect 
 * Some useful Editor methods 
  
+## Screenshots
+![](https://github.com/LuxuryPanda/Installer-POC/blob/master/Screenshots/Home.PNG)
+ 
 ## To-do List
 
 * Packages finder system
